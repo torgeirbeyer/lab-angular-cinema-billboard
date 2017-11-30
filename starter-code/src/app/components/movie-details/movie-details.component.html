@@ -1,0 +1,62 @@
+<div class="details" *ngIf="movie">
+  <div class="header">
+    <h4>Room {{movie.room}}</h4>
+    <h3>{{movie.title}}</h3>
+  </div>
+  <div class="details-container">
+    <div class="image">
+      <img src="{{movie.poster}}" alt="">
+      <a [routerLink]="['']">Go home</a>
+    </div>
+    <div class="text">
+      <div class="genres">
+        <h5>Genres</h5>
+        <ul>
+          <li *ngFor="let genre of movie.genres">{{genre}}</li>
+        </ul>
+      </div>
+      <div class="year">
+        <h5>Year</h5>
+        <ul>
+          <li>
+            {{movie.year}}
+          </li>
+        </ul>
+      </div>
+      <div class="director">
+        <h5>Director</h5>
+        <ul>
+          <li>
+            {{movie.director}}
+          </li>
+        </ul>
+      </div>
+      <div class="actors">
+        <h5>Actors</h5>
+        <ul>
+          <li *ngFor="let actor of movie.actors">
+            {{actor}}
+          </li>
+        </ul>
+      </div>
+      <div class="schedule">
+        <h5>Schedule</h5>
+        <ul>
+          <li *ngFor="let schedule of movie.hours">
+            {{schedule}}
+          </li>
+        </ul>
+      </div>
+      <div class="synopsis">
+        <h5>Synopsis</h5>
+          <p>
+            {{movie.synopsis}}
+          </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  

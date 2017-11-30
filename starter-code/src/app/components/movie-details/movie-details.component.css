@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 32%;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.image img {
+  margin-top: -6%;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.text {
+  width: 100%;
+  margin: 0 3%;
+}
+
+.genres, .year, .director, .actors, .schedule {
+  display: flex;
+  align-items: baseline;
+}
+
+.synopsis {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+h5 {
+  width: 10%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* div {
+  border: 1px solid black;
+} */
+
+img {
+  height: 50vh;
+}

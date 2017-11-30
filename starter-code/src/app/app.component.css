@@ -1,0 +1,11 @@
+header {
+  background: pink;
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  margin: -12px;
+}
+
+header img {
+  height: 24vh;
+}

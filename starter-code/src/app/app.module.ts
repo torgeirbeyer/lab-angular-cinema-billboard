@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 
 import { MyHomeComponent } from './pages/my-home/my-home.component';
 import { MyMovieComponent } from './pages/my-movie/my-movie.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { CinemaService } from 'app/services/cinema.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,7 +23,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MyHomeComponent,
-    MyMovieComponent
+    MyMovieComponent,
+    MovieListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,9 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    CinemaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

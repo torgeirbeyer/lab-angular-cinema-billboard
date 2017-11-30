@@ -3,67 +3,67 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CinemaService {
 
-  movies: object[] = [
+  movies = [
     {
       id: 1,
-      title: "The Shawshank Redemption",
-      poster: "https://i.imgur.com/SuW2ZlC.jpg",
-      synopsis: "In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death...",
+      title: 'The Shawshank Redemption',
+      poster: 'https://i.imgur.com/SuW2ZlC.jpg',
+      synopsis: 'In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death...',
       genres: [
-        "Crime", "Drama"
+        'Crime', 'Drama'
       ],
       year: 1994,
-      director: "Frank Darabont",
+      director: 'Frank Darabont',
       actors: [
-        "Tim Robbins",
-        "Morgan Freeman",
-        "Bob Gunton",
-        "William Sadler",
-        "Clancy Brown",
-        "Gil Bellows"
+        'Tim Robbins',
+        'Morgan Freeman',
+        'Bob Gunton',
+        'William Sadler',
+        'Clancy Brown',
+        'Gil Bellows'
       ],
       hours: [
-        "19:00",
-        "21:00"
+        '19:00',
+        '21:00'
       ],
       room: 1
     }, {
       id: 2,
-      title: "The Godfather",
-      poster: "https://i.imgur.com/Uzvny9I.jpg",
-      synopsis: "In late summer 1945, guests are gathered for the wedding reception of Don Vito Corleone's daughter Connie (Talia Shire) and Carlo Rizzi (Gianni Russo). Vito...",
+      title: 'The Godfather',
+      poster: 'https://i.imgur.com/Uzvny9I.jpg',
+      synopsis: 'In late summer 1945, guests are gathered for the wedding reception of Don Vito Corleone\'s daughter Connie (Talia Shire) and Carlo Rizzi (Gianni Russo). Vito...',
       genres: [
-        "Crime", "Drama"
+        'Crime', 'Drama'
       ],
       year: 1972,
-      director: "Francis Ford Coppola",
+      director: 'Francis Ford Coppola',
       actors: [
-        "Marlon Brando",
-        "Al Pacino",
-        "James Caan",
-        "Richard S. Castellano",
-        "Robert Duvall",
-        "Sterling Hayden"
+        'Marlon Brando',
+        'Al Pacino',
+        'James Caan',
+        'Richard S. Castellano',
+        'Robert Duvall',
+        'Sterling Hayden'
       ],
       hours: [
-        "19:00",
-        "21:00"
+        '19:00',
+        '21:00'
       ],
       room: 2
     }, {
       id: 3,
-      title: "The Godfather Part II",
-      poster: "https://i.imgur.com/abJNkWI.jpg",
-      synopsis: "The Godfather Part II presents two parallel storylines. One involves Mafia chief Michael Corleone in 1958/1959 after the events of the first movie; the othe...",
+      title: 'The Godfather Part II',
+      poster: 'https://i.imgur.com/abJNkWI.jpg',
+      synopsis: 'The Godfather Part II presents two parallel storylines. One involves Mafia chief Michael Corleone in 1958/1959 after the events of the first movie; the othe...',
       genres: [
-        "Crime", "Drama"
+        'Crime', 'Drama'
       ],
       year: 1974,
-      director: "Francis Ford Coppola",
+      director: 'Francis Ford Coppola',
       actors: [
-        "Al Pacino",
-        "Robert Duvall",
-        "Diane Keaton",
+        'Al Pacino',
+        'Robert Duvall',
+        'Diane Keaton',
         'Robert De Niro',
         'John Cazale',
         'Talia Shire'
@@ -97,10 +97,9 @@ export class CinemaService {
       ],
       room: 4
     }, {
-    {
       id: 5,
       title: 'Schindler\'s List',
-      poster: 'https://i.imgur.com/IWZJOmu.jpg',
+      poster: 'http://img.moviepostershop.com/schindlers-list-movie-poster-1993-1020189480.jpg',
       synopsis: 'The relocation of Polish Jews from surrounding areas to Krakow begins in late 1939, shortly after the outbreak of World War II, when the German Army defeats...',
       genres: [
         'Biography', 'Drama', 'History'
@@ -126,12 +125,14 @@ export class CinemaService {
 
   constructor() { }
 
-  getMovies():Array<object> {
+  getMovies(): Array<object> {
     return this.movies;
   }
 
-  getMovie(id):object {
-    return;
+  getMovie(id, callback) {
+    const movie = this.movies.find((item) => item.id == id);
+    console.log(movie);
+    callback(movie);
   }
 
 }
